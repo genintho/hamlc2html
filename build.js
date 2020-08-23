@@ -1,16 +1,11 @@
+const drawings = require('./drawings.json');
 const ejs = require('ejs');
 const fs = require('fs');
-const drawings = require('./drawings.json');
 const urlSlug = require('url-slug');
-
-if (!fs.existsSync("./build")) {
-    fs.mkdirSync("./build");
-}
 
 drawings.forEach((drawing) => {
     drawing.link = urlSlug(drawing.name) + '.html';
 });
-// console.log(drawings);
 
 let res, tpl;
 tpl = fs.readFileSync('./templates/index.html', {encoding: 'utf-8'});
@@ -20,7 +15,6 @@ fs.writeFileSync("./build/index.html", res);
 tpl = fs.readFileSync('./templates/drawings.html', {encoding: 'utf-8'});
 res = ejs.render(tpl, {drawings});
 fs.writeFileSync("./build/drawings.html", res);
-
 
 if (!fs.existsSync("./build/drawings")) {
     fs.mkdirSync("./build/drawings/");
