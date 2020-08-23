@@ -28,7 +28,7 @@ if (!fs.existsSync("./build/drawings")) {
 tpl = fs.readFileSync('./templates/drawing.html', {encoding: 'utf-8'});
 
 drawings.forEach((drawing, idx) => {
-    console.log("render", drawings.name);
+    console.log("render", drawing.name);
     res = ejs.render(tpl, {
         drawing,
         prevD: idx >0 ? drawings[idx-1]: null,
