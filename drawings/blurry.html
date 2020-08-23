@@ -1,60 +1,70 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="">
+	<head>
+		<meta charset="utf-8" />
+		<title>Blurry - Cristina Cojocaru</title>
+		<meta name="description" content="Blurry" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <meta charset="utf-8">
-  <title>Blurry - Cristina Cojocaru</title>
-  <meta name="description" content="Blurry">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta property="og:title" content="" />
+		<meta property="og:type" content="" />
+		<meta property="og:url" content="" />
+		<meta property="og:image" content="" />
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
+		<link rel="apple-touch-icon" href="icon.png" />
 
-  <link rel="apple-touch-icon" href="icon.png">
+		<style>
+			.box {
+				max-height: 85vh;
+				display: flex;
+			}
+			.img-box {
+				display: flex;
+				justify-content: center;
+			}
+			.img {
+				max-width: 100%;
+				max-height: 100%;
+				height: auto;
+				width: auto;
+				border: 5px solid black;
+			}
 
-  <style>
-    #img {
-    display: block;
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 75%;
-      max-height: 75%;
-    }
+			.title-box {
+				display: flex;
+				justify-content: center;
+			}
 
-    #title {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-style: italic;
-    }
+			.title {
+				font-style: italic;
+			}
 
-    .nav {
-      position: absolute;
-      bottom: 15px;
-      right: 15px;
-    }
-  </style>
-</head>
+			.nav {
+				position: absolute;
+				bottom: 15px;
+				right: 15px;
+			}
+		</style>
+	</head>
 
-<body>
-    <a href="/"><h1>Cristina Cojocaru</h1></a>
-    <div>
-      <img id="img" src="/images/Photo Aug 23, 1 23 00 PM.jpg" />
-      <div>
-        <h2 id="title">Blurry</strong></h2>
-      </div>
-    </div>
+	<body>
+		<a href="/"> <h1>Cristina Cojocaru</h1></a>
 
+		<div class="box">
+			<div class="img-box">
+				<img class="img" src="/images/Photo Aug 23, 1 23 00 PM.jpg" />
+			</div>
+		</div>
+		<div class="title-box">
+			<p class="title">Blurry</p>
+		</div>
 
-    <div class="nav">
-      
-        <a href="/drawings/fisherman.html"><button>< Prev </button></a>
-      
-      <a href="/drawings.html"><button>All</button></a>
-      
-    </div>
-</body>
+		<div class="nav">
+			
+			<a href="/drawings/fisherman.html"><button>< Prev</button></a>
+			
+			<a href="/drawings.html"><button>All</button></a>
+			
+		</div>
+	</body>
 </html>

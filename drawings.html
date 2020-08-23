@@ -1,45 +1,130 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="">
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta property="og:title" content="" />
+		<meta property="og:type" content="" />
+		<meta property="og:url" content="" />
+		<meta property="og:image" content="" />
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
+		<!-- <link rel="manifest" href="site.webmanifest"> -->
+		<link rel="apple-touch-icon" href="icon.png" />
+		<!-- Place favicon.ico in the root directory -->
 
-  <!-- <link rel="manifest" href="site.webmanifest"> -->
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
+		<title>Cristina Cojocaru</title>
 
-  <title>Cristina Cojocaru</title>
+		<style>
+			.drawings {
+				display: flex;
+				flex-wrap: wrap;
+			}
+			.drawing {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				height: 100%;
+				/* margin-left: 15px; */
+				margin: 10px;
+				opacity: 1;
+				transition: 0.3s;
+			}
+			.drawing:hover {
+				opacity: 0.6;
+			}
+			.thumb {
+				width: 150px;
+				border-radius: 15px;
+			}
+			.name {
+				position: absolute;
+				bottom: 5px;
+			}
+		</style>
+	</head>
 
-  <style>
-
-  </style>
-</head>
-
-<body>
-    <a href="/"><h1>Cristina Cojocaru</h1></a>
-    <h2>Drawings</h2>
-    <ul>
-        
-            <li><a href="/drawings/aubergine.html">Aubergine</a></li>
-        
-            <li><a href="/drawings/a-day-in-fall.html">A Day in Fall</a></li>
-        
-            <li><a href="/drawings/tomato.html">Tomato</a></li>
-        
-            <li><a href="/drawings/pear.html">Pear</a></li>
-        
-            <li><a href="/drawings/fisherman.html">Fisherman</a></li>
-        
-            <li><a href="/drawings/blurry.html">Blurry</a></li>
-        
-    </ul>
-</body>
+	<body>
+		<a href="/"><h1>Cristina Cojocaru</h1></a>
+		<h2>Drawings</h2>
+		<div class="drawings">
+			
+			<div class="">
+				<a href="/drawings/aubergine.html">
+					<div class="drawing">
+						<img
+							class="thumb"
+							src="/images/2020-05-25-11.51.54@150.png"
+						/>
+						<p class="name">Aubergine</p>
+					</div>
+				</a>
+			</div>
+			
+			<div class="">
+				<a href="/drawings/a-day-in-fall.html">
+					<div class="drawing">
+						<img
+							class="thumb"
+							src="/images/2020-05-25-11.51.54@150.png"
+						/>
+						<p class="name">A Day in Fall</p>
+					</div>
+				</a>
+			</div>
+			
+			<div class="">
+				<a href="/drawings/tomato.html">
+					<div class="drawing">
+						<img
+							class="thumb"
+							src="/images/2020-05-25-11.53.14@150.png"
+						/>
+						<p class="name">Tomato</p>
+					</div>
+				</a>
+			</div>
+			
+			<div class="">
+				<a href="/drawings/pear.html">
+					<div class="drawing">
+						<img
+							class="thumb"
+							src="/images/2020-05-25-11.53.47@150.png"
+						/>
+						<p class="name">Pear</p>
+					</div>
+				</a>
+			</div>
+			
+			<div class="">
+				<a href="/drawings/fisherman.html">
+					<div class="drawing">
+						<img
+							class="thumb"
+							src="/images/Photo Aug 23, 1 23 07 PM@150.jpg"
+						/>
+						<p class="name">Fisherman</p>
+					</div>
+				</a>
+			</div>
+			
+			<div class="">
+				<a href="/drawings/blurry.html">
+					<div class="drawing">
+						<img
+							class="thumb"
+							src="/images/Photo Aug 23, 1 23 00 PM@150.jpg"
+						/>
+						<p class="name">Blurry</p>
+					</div>
+				</a>
+			</div>
+			
+		</div>
+	</body>
 </html>
