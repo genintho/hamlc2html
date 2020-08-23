@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <!-- <link rel="manifest" href="site.webmanifest"> -->
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+    <title>Cristina Cojocaru</title>
+
+  <style>
+    body {
+        background: url("img/2020-05-25-11.51.54.png") no-repeat center center fixed;
+        background-size: contain;
+        transition: all .2s ease;
+        /**
+        background-color: rgb(200, 200, 200);
+        **/
+    }
+
+    .linkedin {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+    }
+
+    #img_nav {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    #about {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+
+    #title {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+    <h1>Cristina Cojocaru</h1>
+    <a class="linkedin" href="https://www.linkedin.com/in/ccojocaru/" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22.258" height="22.258"><path d="M5.366 2.973c0 1.376-1.035 2.479-2.699 2.479h-.031C1.034 5.453 0 4.348 0 2.973 0 1.564 1.067.491 2.698.491 4.331.49 5.336 1.564 5.366 2.973zM.28 21.766h4.772V7.413H.28v14.353zM16.764 7.077c-2.531 0-3.664 1.39-4.301 2.37v.046h-.031a.232.232 0 00.031-.046V7.414H7.692c.062 1.345 0 14.353 0 14.353h4.771v-8.016c0-.432.029-.855.157-1.164.346-.854 1.132-1.747 2.446-1.747 1.729 0 2.42 1.319 2.42 3.247v7.68h4.771v-8.229c.001-4.412-2.355-6.461-5.493-6.461z"/></svg>
+    </a>
+
+    <div id="about"><a href="/about.html">About</a></div>
+    <div id="title"></div>
+    <div id="img_nav">
+        <button onclick="display_img();">Show different</button>
+    </div>
+    <script>
+        const images = [{
+            file: "2020-05-25-11.47.48.png",
+        },{
+            file: "2020-05-25-11.48.46.png",
+        },{
+            file: "2020-05-25-11.51.54.png",
+            "date": "2020-05-25-11",
+            "name": "Aubergine",
+        }, {
+            file: "2020-05-25-11.50.49.png",
+        }, {
+            file: "2020-05-25-11.51.54.png",
+            name: "A Day in Fall",
+        }, {
+            file: "2020-05-25-11.53.14.png",
+            name: "Tomato",
+        }, {
+            file: "2020-05-25-11.53.47.png",
+            name: "Pear",
+        }];
+        let timer = 0;
+        function display_img() {
+            clearTimeout(timer);
+            const item = images[Math.floor(Math.random() * images.length)];
+            const img = new Image();
+            const url = "/img/" + item.file;
+            img.src = url;
+            img.onload = () => {
+                document.body.style.backgroundImage = "url('" + url + "')";
+                document.getElementById("title").innerHTML = item.name ? item.name : ""
+                timer = setTimeout(display_img, 5000);
+            };
+        }
+
+        timer = setTimeout(display_img, 5000);
+    </script>
+</body>
+</html>
