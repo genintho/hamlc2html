@@ -3,6 +3,10 @@ const fs = require('fs');
 const drawings = require('./drawings.json');
 const urlSlug = require('url-slug');
 
+if (!fs.existsSync("./build")) {
+    fs.mkdirSync("./build");
+}
+
 drawings.forEach((drawing) => {
     drawing.link = urlSlug(drawing.name) + '.html';
 });
