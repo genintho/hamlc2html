@@ -15,7 +15,7 @@ drawings.forEach((drawing) => {
 
 let res, tpl;
 tpl = fs.readFileSync(TEMPLATE_DIR + "index.html", { encoding: "utf-8" });
-res = ejs.render(tpl, { drawings });
+res = ejs.render(tpl, { drawings, is_index: true });
 fs.writeFileSync(BUILD_DIR + "index.html", res);
 
 tpl = fs.readFileSync(TEMPLATE_DIR + "drawings.html", { encoding: "utf-8" });
@@ -25,12 +25,13 @@ fs.writeFileSync(BUILD_DIR + "drawings.html", res);
 if (!fs.existsSync(BUILD_DIR + "drawings")) {
 	fs.mkdirSync(BUILD_DIR + "drawings/");
 }
-tpl = fs.readFileSync(TEMPLATE_DIR + "drawing.html", { encoding: "utf-8" });
+tpl = fs.readFileSync(TEMPLATE_DIR + "index.html", { encoding: "utf-8" });
 
 drawings.forEach((drawing, idx) => {
 	console.log("render", drawing.name);
 	res = ejs.render(tpl, {
 		drawing,
+		is_index: false,
 		prevD: idx > 0 ? drawings[idx - 1] : null,
 		nextD: idx + 1 < drawings.length ? drawings[idx + 1] : null,
 	});

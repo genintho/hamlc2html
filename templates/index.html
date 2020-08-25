@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title></title>
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -15,10 +14,12 @@
 		<link rel="apple-touch-icon" href="icon.png" />
 		<!-- Place favicon.ico in the root directory -->
 
-		<title>Cristina Cojocaru</title>
+		<title>
+			<%= is_index ? "" : drawing.name + " - " %>Cristina Cojocaru
+		</title>
 
 		<style>
-			.box {
+			/* .box {
 				max-height: 85vh;
 				display: flex;
 			}
@@ -26,12 +27,15 @@
 				display: flex;
 				justify-content: center;
 				width: 100%;
+			} */
+			.imgbox {
+				display: grid;
+				height: 85vh;
 			}
 			#img {
-				max-width: 100%;
-				max-height: 100%;
-				height: auto;
-				width: auto;
+				max-width: 95%;
+				max-height: 84vh;
+				margin: auto;
 				border: 5px solid black;
 			}
 
@@ -82,13 +86,9 @@
 			</svg>
 		</a>
 
-		<div class="box">
-			<div class="img-box">
-				<img id="img" />
-			</div>
-		</div>
-		<div class="title-box">
-			<p id="title"></p>
+		<div class="imgbox">
+			<img id="img" src="/images/<%= !is_index ? drawing.file : ""%>" />
+			<p class="title"><%= !is_index ? drawing.name: "" %></p>
 		</div>
 
 		<div id="about">
@@ -97,8 +97,17 @@
 		</div>
 		<div id="title"></div>
 		<div id="img_nav">
+			<% if (is_index) { %>
 			<button onclick="display_img();">Show different</button>
+			<% } else { %> <% if (prevD) { %>
+			<a href="/drawings/<%= prevD.link %>"><button>< Prev</button></a>
+			<% } %>
+			<a href="/drawings.html"><button>All</button></a>
+			<% if (nextD) { %>
+			<a href="/drawings/<%= nextD.link %>"><button>Next ></button></a>
+			<% } %> <% } %>
 		</div>
+		<% if (is_index) { %>
 		<script>
 			const images = <%- JSON.stringify(drawings) %>;
 			var timer = 0;
@@ -118,5 +127,6 @@
 
 			display_img();
 		</script>
+		<% } %>
 	</body>
 </html>
