@@ -37,15 +37,13 @@
 				max-height: 84vh;
 				margin: auto;
 				border: 5px solid black;
-			}
-
-			.title-box {
-				display: flex;
-				justify-content: center;
+				border-radius: 4px;
 			}
 
 			#title {
 				font-style: italic;
+				text-align: center;
+				font-size: 25px;
 			}
 
 			.linkedin {
@@ -69,7 +67,7 @@
 	</head>
 
 	<body>
-		<h1>Cristina Cojocaru</h1>
+		<a href="/"><h1>Cristina Cojocaru</h1></a>
 		<a
 			class="linkedin"
 			href="https://www.linkedin.com/in/ccojocaru/"
@@ -88,7 +86,7 @@
 
 		<div class="imgbox">
 			<img id="img" src="/images/<%= !is_index ? drawing.file : ""%>" />
-			<p class="title"><%= !is_index ? drawing.name: "" %></p>
+			<p id="title"><%= !is_index ? drawing.name: "" %></p>
 		</div>
 
 		<div id="about">
