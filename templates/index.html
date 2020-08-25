@@ -2,21 +2,20 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="description" content="" />
+		<title><%= title %></title>
+		<meta
+			name="description"
+			content="Discover the unique and wonderful art of my PewPew"
+		/>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<meta property="og:title" content="" />
+		<meta property="og:title" content="<%= title %>" />
 		<meta property="og:type" content="" />
 		<meta property="og:url" content="" />
-		<meta property="og:image" content="" />
-
+		<meta property="og:image" content="/images/<%= drawing.thumb_150 %>" />
+		<link rel="icon" type="image/jpg" href="/pewpew.jpg" />
 		<!-- <link rel="manifest" href="site.webmanifest"> -->
-		<link rel="apple-touch-icon" href="icon.png" />
 		<!-- Place favicon.ico in the root directory -->
-
-		<title>
-			<%= is_index ? "" : drawing.name + " - " %>Cristina Cojocaru
-		</title>
 
 		<style>
 			/* .box {
@@ -85,8 +84,8 @@
 		</a>
 
 		<div class="imgbox">
-			<img id="img" src="/images/<%= !is_index ? drawing.file : ""%>" />
-			<p id="title"><%= !is_index ? drawing.name: "" %></p>
+			<img id="img" src="/images/<%= drawing.file %>" />
+			<p id="title"><%= drawing.name %></p>
 		</div>
 
 		<div id="about">
@@ -123,7 +122,7 @@
 			    };
 			}
 
-			display_img();
+			timer = setTimeout(display_img, 9000)
 		</script>
 		<% } %>
 	</body>

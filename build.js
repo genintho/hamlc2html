@@ -15,7 +15,12 @@ drawings.forEach((drawing) => {
 
 let res, tpl;
 tpl = fs.readFileSync(TEMPLATE_DIR + "index.html", { encoding: "utf-8" });
-res = ejs.render(tpl, { drawings, is_index: true });
+res = ejs.render(tpl, {
+	drawings,
+	drawing: drawings[Math.floor(Math.random() * drawings.length)],
+	is_index: true,
+	title: "Cristina Cojocaru",
+});
 fs.writeFileSync(BUILD_DIR + "index.html", res);
 
 tpl = fs.readFileSync(TEMPLATE_DIR + "drawings.html", { encoding: "utf-8" });
@@ -31,6 +36,7 @@ drawings.forEach((drawing, idx) => {
 	console.log("render", drawing.name);
 	res = ejs.render(tpl, {
 		drawing,
+		title: drawing.name + " - Cristina Cojocaru",
 		is_index: false,
 		prevD: idx > 0 ? drawings[idx - 1] : null,
 		nextD: idx + 1 < drawings.length ? drawings[idx + 1] : null,
