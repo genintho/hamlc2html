@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title></title>
-		<meta name="description" content="" />
+		<title>Cristina Cojocaru</title>
+		<meta
+			name="description"
+			content="Discover the unique and wonderful art of my PewPew"
+		/>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<meta property="og:title" content="" />
+		<meta property="og:title" content="Cristina Cojocaru" />
 		<meta property="og:type" content="" />
 		<meta property="og:url" content="" />
-		<meta property="og:image" content="" />
-
+		<meta property="og:image" content="/images/Photo Aug 23, 1 23 07 PM@150.jpg" />
+		<link rel="icon" type="image/jpg" href="/pewpew.jpg" />
 		<!-- <link rel="manifest" href="site.webmanifest"> -->
-		<link rel="apple-touch-icon" href="icon.png" />
 		<!-- Place favicon.ico in the root directory -->
 
-		<title>Cristina Cojocaru</title>
-
 		<style>
-			.box {
+			/* .box {
 				max-height: 85vh;
 				display: flex;
 			}
@@ -26,22 +26,23 @@
 				display: flex;
 				justify-content: center;
 				width: 100%;
+			} */
+			.imgbox {
+				display: grid;
+				height: 85vh;
 			}
 			#img {
-				max-width: 100%;
-				max-height: 100%;
-				height: auto;
-				width: auto;
+				max-width: 95%;
+				max-height: 84vh;
+				margin: auto;
 				border: 5px solid black;
-			}
-
-			.title-box {
-				display: flex;
-				justify-content: center;
+				border-radius: 4px;
 			}
 
 			#title {
 				font-style: italic;
+				text-align: center;
+				font-size: 25px;
 			}
 
 			.linkedin {
@@ -65,7 +66,7 @@
 	</head>
 
 	<body>
-		<h1>Cristina Cojocaru</h1>
+		<a href="/"><h1>Cristina Cojocaru</h1></a>
 		<a
 			class="linkedin"
 			href="https://www.linkedin.com/in/ccojocaru/"
@@ -82,13 +83,9 @@
 			</svg>
 		</a>
 
-		<div class="box">
-			<div class="img-box">
-				<img id="img" />
-			</div>
-		</div>
-		<div class="title-box">
-			<p id="title"></p>
+		<div class="imgbox">
+			<img id="img" src="/images/Photo Aug 23, 1 23 07 PM.jpg" />
+			<p id="title">Fisherman</p>
 		</div>
 
 		<div id="about">
@@ -97,10 +94,13 @@
 		</div>
 		<div id="title"></div>
 		<div id="img_nav">
+			
 			<button onclick="display_img();">Show different</button>
+			
 		</div>
+		
 		<script>
-			const images = [{"file":"2020-05-25-11.51.54.png","name":"Aubergine","link":"aubergine.html","thumb_150":"2020-05-25-11.51.54@150.png"},{"file":"2020-05-25-11.51.54.png","name":"A Day in Fall","link":"a-day-in-fall.html","thumb_150":"2020-05-25-11.51.54@150.png"},{"file":"2020-05-25-11.53.14.png","name":"Tomato","link":"tomato.html","thumb_150":"2020-05-25-11.53.14@150.png"},{"file":"2020-05-25-11.53.47.png","name":"Pear","link":"pear.html","thumb_150":"2020-05-25-11.53.47@150.png"},{"file":"Photo Aug 23, 1 23 07 PM.jpg","name":"Fisherman","link":"fisherman.html","thumb_150":"Photo Aug 23, 1 23 07 PM@150.jpg"},{"file":"Photo Aug 23, 1 23 00 PM.jpg","name":"Blurry","link":"blurry.html","thumb_150":"Photo Aug 23, 1 23 00 PM@150.jpg"}];
+			const images = [{"file":"2020-05-25-11.51.54.png","name":"Aubergine","link":"aubergine.html","thumb_150":"2020-05-25-11.51.54@150.png"},{"file":"2020-05-25-11.51.54.png","name":"A Day in Fall","link":"a-day-in-fall.html","thumb_150":"2020-05-25-11.51.54@150.png"},{"file":"2020-05-25-11.53.14.png","name":"Tomato","link":"tomato.html","thumb_150":"2020-05-25-11.53.14@150.png"},{"file":"2020-05-25-11.53.47.png","name":"Pear","link":"pear.html","thumb_150":"2020-05-25-11.53.47@150.png"},{"file":"Photo Aug 23, 1 23 07 PM.jpg","name":"Fisherman","link":"fisherman.html","thumb_150":"Photo Aug 23, 1 23 07 PM@150.jpg"},{"file":"Photo Aug 23, 1 23 00 PM.jpg","name":"Blurry","link":"blurry.html","thumb_150":"Photo Aug 23, 1 23 00 PM@150.jpg"},{"file":"Photo Aug 24, 6 38 39 PM.jpg","name":"Citrouille","link":"citrouille.html","thumb_150":"Photo Aug 24, 6 38 39 PM@150.jpg"},{"file":"Photo Aug 24, 6 38 59 PM.jpg","name":"Siberia","link":"siberia.html","thumb_150":"Photo Aug 24, 6 38 59 PM@150.jpg"}];
 			var timer = 0;
 			function display_img() {
 			    clearTimeout(timer);
@@ -116,7 +116,8 @@
 			    };
 			}
 
-			display_img();
+			timer = setTimeout(display_img, 9000)
 		</script>
+		
 	</body>
 </html>
